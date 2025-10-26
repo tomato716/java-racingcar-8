@@ -11,4 +11,8 @@ public class Input {
     public String gameAttempt() {
         return Console.readLine();
     }
+
+    public void finish() {
+        Console.close();
+    }
 }
