@@ -25,4 +25,12 @@ public class Validator {
 
         return List.of(carName.split(DELIMITER));
     }
+
+    public void validateGameAttempt(String gameRound) {
+        try {
+            Integer.parseInt(gameRound);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("시도 횟수는 숫자만 입력할 수 있습니다.");
+        }
+    }
 }
