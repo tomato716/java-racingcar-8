@@ -1,6 +1,7 @@
 package racingcar.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
@@ -18,5 +19,21 @@ public class ValidatorTest {
         List<String> carNames = validator.splitCarName(input);
 
         assertEquals(List.of("ab", "cd", "ef"), carNames);
+    }
+
+    @DisplayName("경주 자동차 이름이 5를 초과하면 예외 발생")
+    @Test
+    void carNameOverLimit() {
+        String carNames = "pobi,popopo";
+
+        assertThrows(IllegalArgumentException.class, () -> validator.splitCarName(carNames));
+    }
+
+    @DisplayName("경주 자동차 이름이 1 미만이면 예외 발생")
+    @Test
+    void carNameNull() {
+        String carNames = ",a,,";
+
+        assertThrows(IllegalArgumentException.class, () -> validator.splitCarName(carNames));
     }
 }
