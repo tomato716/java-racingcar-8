@@ -25,4 +25,8 @@ public class Output {
         return EXPRESS.repeat(position);
     }
 
+    public void printWinner(List<String> winner) {
+        System.out.print("최종 우승자 : ");
+        System.out.println(String.join(", ", winner));
+    }
 }
