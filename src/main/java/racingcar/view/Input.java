@@ -7,4 +7,8 @@ public class Input {
     public String carName() {
         return Console.readLine();
     }
+
+    public String gameAttempt() {
+        return Console.readLine();
+    }
 }
