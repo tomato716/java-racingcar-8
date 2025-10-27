@@ -1,7 +1,5 @@
 package racingcar.model;
 
-import camp.nextstep.edu.missionutils.Randoms;
-
 public class Car {
     private final Name name;
     private final Position position;
