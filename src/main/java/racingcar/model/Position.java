@@ -9,7 +9,7 @@ class Position {
         return position;
     }
 
-    public void move() {
+    public void tryMove() {
         if (randomNumber.pickRandomNumber()) {
             position++;
         }

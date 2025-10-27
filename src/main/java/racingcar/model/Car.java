@@ -10,7 +10,7 @@ public class Car {
     }
 
     public void play() {
-        position.move();
+        position.tryMove();
     }
 
     public String getName() {
