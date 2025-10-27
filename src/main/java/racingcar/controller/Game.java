@@ -39,7 +39,7 @@ public class Game {
         createCars();
         int gameRound = createGameRound();
 
-        System.out.println("실행 결과");
+        output.executionStatement();
         for (int i = 0; i < gameRound; i++) {
             cars.gameStart();
 
