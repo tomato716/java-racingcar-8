@@ -1,5 +1,6 @@
 package racingcar.controller;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -19,7 +20,7 @@ public class Validator {
     }
 
     private void validateDuplicateName(List<String> carNames) {
-        Set<String> comparisonName = Set.of(carNames.toString());
+        Set<String> comparisonName = new HashSet<>(carNames);
 
         if (comparisonName.size() != carNames.size()) {
             throw new IllegalArgumentException("자동차 이름은 중복될 수 없습니다.");
