@@ -3,26 +3,27 @@ package racingcar.model;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class Car {
-    private final String name;
-    private int position;
+    private final Name name;
+    private final Position position;
 
-    public Car(String name) {
-        this.name = name;
+    public Car(String input) {
+        name = new Name(input);
+        position = new Position();
     }
 
     public void play() {
         int number = Randoms.pickNumberInRange(0, 9);
         if (number >= 4) {
-            position++;
+            position.move();
         }
     }
 
     public String getName() {
-        return name;
+        return name.getName();
     }
 
     public int getPosition() {
-        return position;
+        return position.getPosition();
     }
 
 }
