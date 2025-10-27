@@ -1,6 +1,8 @@
 package racingcar.model;
 
 class Position {
+    private final RandomNumber randomNumber = new RandomNumber();
+
     private int position;
 
     public int getPosition() {
@@ -8,6 +10,8 @@ class Position {
     }
 
     public void move() {
-        position++;
+        if (randomNumber.pickRandomNumber()) {
+            position++;
+        }
     }
 }

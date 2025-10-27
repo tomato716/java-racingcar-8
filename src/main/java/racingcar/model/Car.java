@@ -12,10 +12,7 @@ public class Car {
     }
 
     public void play() {
-        int number = Randoms.pickNumberInRange(0, 9);
-        if (number >= 4) {
-            position.move();
-        }
+        position.move();
     }
 
     public String getName() {
