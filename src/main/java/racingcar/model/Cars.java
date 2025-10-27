@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cars {
+    private static final int ZERO = 0;
+
     private final Winner winner = new Winner();
     private final List<Car> cars = new ArrayList<>();
 
@@ -38,7 +40,7 @@ public class Cars {
     }
 
     private int findMaxScore() {
-        int max = 0;
+        int max = ZERO;
         for (Car car : cars) {
             if (max < car.getPosition()) {
                 max = car.getPosition();
