@@ -18,6 +18,10 @@ public class Output {
         System.out.println("\n실행 결과");
     }
 
+    public void printEachResult(String name, int position) {
+        System.out.println(name + " : " + formatPosition(position));
+    }
+
     public void roundResult(List<Car> cars) {
         for (Car car : cars) {
             System.out.println(car.getName() + " : " + formatPosition(car.getPosition()));

@@ -1,6 +1,7 @@
 package racingcar.controller;
 
 import java.util.List;
+import racingcar.model.Car;
 import racingcar.model.Cars;
 import racingcar.view.Input;
 import racingcar.view.Output;
@@ -40,14 +41,26 @@ public class Game {
         int gameRound = createGameRound();
 
         output.executionStatement();
-        for (int i = 0; i < gameRound; i++) {
-            cars.gameStart();
-
-            output.roundResult(cars.getCars());
-        }
+        playRound(gameRound);
 
         output.printWinner(cars.findWinner());
 
         input.finish();
     }
+
+    private void playRound(int gameRound) {
+        for (int i = 0; i < gameRound; i++) {
+            cars.gameStart();
+            printResult(cars.getCars());
+        }
+    }
+
+    private void printResult(List<Car> cars) {
+        for (Car car : cars) {
+            output.printEachResult(car.getName(), car.getPosition());
+        }
+        System.out.println();
+    }
+
+
 }
