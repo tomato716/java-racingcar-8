@@ -60,4 +60,12 @@ public class ValidatorTest {
 
         assertThrows(IllegalArgumentException.class, () -> validator.splitCarName(input));
     }
+
+    @DisplayName("자동차 이름이 중복되면 예외 발생 테스트")
+    @Test
+    void doNotDuplicateName() {
+        String input = "pobi,pobi";
+
+        assertThrows(IllegalArgumentException.class, ()->validator.splitCarName(input));
+    }
 }
