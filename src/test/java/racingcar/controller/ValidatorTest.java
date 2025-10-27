@@ -11,7 +11,7 @@ public class ValidatorTest {
     private final Validator validator = new Validator();
 
 
-    @DisplayName("쉼표(,)를 기준으로 입력받은 문자열을 분리하여 리스트로 반환")
+    @DisplayName("쉼표(,)를 기준으로 입력받은 문자열을 분리하여 리스트로 반환 테스트")
     @Test
     void splitCarName() {
         String input = "ab,cd,ef";
@@ -21,7 +21,7 @@ public class ValidatorTest {
         assertEquals(List.of("ab", "cd", "ef"), carNames);
     }
 
-    @DisplayName("경주 자동차 이름이 5를 초과하면 예외 발생")
+    @DisplayName("경주 자동차 이름이 5를 초과하면 예외 발생 테스트")
     @Test
     void carNameOverLimit() {
         String carNames = "pobi,popopo";
@@ -29,7 +29,7 @@ public class ValidatorTest {
         assertThrows(IllegalArgumentException.class, () -> validator.splitCarName(carNames));
     }
 
-    @DisplayName("경주 자동차 이름이 1 미만이면 예외 발생")
+    @DisplayName("경주 자동차 이름이 1 미만이면 예외 발생 테스트")
     @Test
     void carNameNull() {
         String carNames = ",a,,";
