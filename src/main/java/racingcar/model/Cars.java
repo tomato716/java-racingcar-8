@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Cars {
     private final Winner winner = new Winner();
-
     private final List<Car> cars = new ArrayList<>();
 
     public void createCar(List<String> carName) {
