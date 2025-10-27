@@ -66,6 +66,6 @@ public class ValidatorTest {
     void doNotDuplicateName() {
         String input = "pobi,pobi";
 
-        assertThrows(IllegalArgumentException.class, ()->validator.splitCarName(input));
+        assertThrows(IllegalArgumentException.class, () -> validator.splitCarName(input));
     }
 }
