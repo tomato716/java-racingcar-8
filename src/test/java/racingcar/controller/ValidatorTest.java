@@ -53,5 +53,11 @@ public class ValidatorTest {
         assertThrows(IllegalArgumentException.class, () -> validator.validateGameAttempt(gameAttempt));
     }
 
+    @DisplayName("자동차 이름에 공백이 포함되어 있는 경우 예외 발생 테스트")
+    @Test
+    void carNameDoNotHaveSpace() {
+        String input = "a , b";
 
+        assertThrows(IllegalArgumentException.class, () -> validator.splitCarName(input));
+    }
 }
