@@ -36,4 +36,14 @@ public class ValidatorTest {
 
         assertThrows(IllegalArgumentException.class, () -> validator.splitCarName(carNames));
     }
+
+    @DisplayName("시도 횟수가 숫자가 아니라면 예외 발생 테스트")
+    @Test
+    void gameAttemptIsNotInteger() {
+        String gameAttempt = "three";
+
+        assertThrows(IllegalArgumentException.class, () -> validator.validateGameAttempt(gameAttempt));
+    }
+
+
 }
