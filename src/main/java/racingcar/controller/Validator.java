@@ -1,6 +1,7 @@
 package racingcar.controller;
 
 import java.util.List;
+import java.util.Set;
 
 public class Validator {
     private static final String DELIMITER = ",";
@@ -12,8 +13,17 @@ public class Validator {
         List<String> carNames = split(carName);
         validateName(carNames);
         validateContainSpace(carNames);
+        validateDuplicateName(carNames);
 
         return carNames;
+    }
+
+    private void validateDuplicateName(List<String> carNames) {
+        Set<String> comparisonName = Set.of(carNames.toString());
+
+        if (comparisonName.size() != carNames.size()) {
+            throw new IllegalArgumentException("자동차 이름은 중복될 수 없습니다.");
+        }
     }
 
     private void validateContainSpace(List<String> carNames) {
