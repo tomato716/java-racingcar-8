@@ -30,9 +30,8 @@ public class Cars {
     }
 
     private void eachCompareToMaxScore() {
-        int max = findMaxScore();
         for (Car car : cars) {
-            if (car.getPosition() == max) {
+            if (car.getPosition() == findMaxScore()) {
                 winner.saveWinner(car.getName());
             }
         }
