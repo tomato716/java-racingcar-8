@@ -10,8 +10,17 @@ public class Validator {
     public List<String> splitCarName(String carName) {
         List<String> carNames = split(carName);
         validateName(carNames);
+        validateContainSpace(carNames);
 
         return carNames;
+    }
+
+    private void validateContainSpace(List<String> carNames) {
+        for (String carName : carNames) {
+            if (carName.contains(" ")) {
+                throw new IllegalArgumentException("자동차 이름에 공백은 포함될 수 없습니다.");
+            }
+        }
     }
 
     private void validateName(List<String> carNames) {
