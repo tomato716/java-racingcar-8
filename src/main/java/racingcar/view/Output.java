@@ -22,13 +22,6 @@ public class Output {
         System.out.println(name + " : " + formatPosition(position));
     }
 
-    public void roundResult(List<Car> cars) {
-        for (Car car : cars) {
-            System.out.println(car.getName() + " : " + formatPosition(car.getPosition()));
-        }
-        System.out.println();
-    }
-
     private String formatPosition(int position) {
         return EXPRESS.repeat(position);
     }
