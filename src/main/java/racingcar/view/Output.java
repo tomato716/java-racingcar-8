@@ -30,4 +30,8 @@ public class Output {
         System.out.print("최종 우승자 : ");
         System.out.println(String.join(", ", winner));
     }
+
+    public void printNewLine() {
+        System.out.println();
+    }
 }

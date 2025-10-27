@@ -59,7 +59,7 @@ public class Game {
         for (Car car : cars) {
             output.printEachResult(car.getName(), car.getPosition());
         }
-        System.out.println();
+        output.printNewLine();
     }
 
 
