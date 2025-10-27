@@ -6,6 +6,7 @@ public class Validator {
     private static final String DELIMITER = ",";
     private static final int NAME_LENGTH_LIMIT = 5;
     private static final int ZERO = 0;
+    private static final String SPACE = " ";
 
     public List<String> splitCarName(String carName) {
         List<String> carNames = split(carName);
@@ -17,7 +18,7 @@ public class Validator {
 
     private void validateContainSpace(List<String> carNames) {
         for (String carName : carNames) {
-            if (carName.contains(" ")) {
+            if (carName.contains(SPACE)) {
                 throw new IllegalArgumentException("자동차 이름에 공백은 포함될 수 없습니다.");
             }
         }
