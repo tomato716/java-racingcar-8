@@ -45,5 +45,13 @@ public class ValidatorTest {
         assertThrows(IllegalArgumentException.class, () -> validator.validateGameAttempt(gameAttempt));
     }
 
+    @DisplayName("시도 횟수가 1보다 작다면 예외 발생 테스트")
+    @Test
+    void gameAttemptIsNotZero() {
+        String gameAttempt = "0";
+
+        assertThrows(IllegalArgumentException.class, () -> validator.validateGameAttempt(gameAttempt));
+    }
+
 
 }
