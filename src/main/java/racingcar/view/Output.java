@@ -20,12 +20,12 @@ public class Output {
 
     public void roundResult(List<Car> cars) {
         for (Car car : cars) {
-            System.out.println(car.getName() + " : " + printPosition(car.getPosition()));
+            System.out.println(car.getName() + " : " + formatPosition(car.getPosition()));
         }
         System.out.println();
     }
 
-    private String printPosition(int position) {
+    private String formatPosition(int position) {
         return EXPRESS.repeat(position);
     }
 
